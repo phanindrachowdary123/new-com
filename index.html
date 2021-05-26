@@ -9,18 +9,38 @@
 </head>
 
 <body>
-    <section>
+    <section class="d1" id="div">
         <!-- navigation bar -->
         <nav>
+            <input type="checkbox" id="active">
+            <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+            <div class="wrapper">
+                <ul class="menu">
+                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i>About</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i>Contact</a></li>
+                    <li><a href="#"><i class="fas fa-lock"></i>Login</a></li>
+                </ul>
+            </div>
             <!-- logo -->
-            <a href="#" class="logo">PHANINDRA</a>
             <!-- Menu -->
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+			<div class="nav-links" id="navLinks">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="nav-links" id="navLinks">
+				<ul>
+					<li><a href="#"><i class="fas fa-search"></i></a></li>
+					<li><a href="#"><i class="fas fa-lock"></i></a></li>
+					<li><a href="login.html" target="_blank">SIGN IN</a></li>
+					<li><a href="signuppage.html" target="_blank">SIGN UP</a></li>
+				</ul>
+			</div>
         </nav>
         <!-- text container -->
         <div class="text-conatiner">
@@ -32,25 +52,29 @@
         </div>
     </section>
     <!-- About container -->
-    <div class="about-container">
-        <div class="about-text">
-            <p>About Me</p>
-            <p>Developer & Engineer</p>
-            <p>Hello,My name is Phanindra Chowdary.As someone coming off of a fresh job search (yay, WordStream!), I
-                can’t tell you how much About
-                Us content
-                browsed over the past few months. Or worse, couldn’t find at all! Lorem ipsum dolor, sit amet
-                consectetur
-                adipisicing elit. At velit accusamus, aut temporibus suscipit voluptatum, minus id similique
-                repellendus
-                itaque aspernatur ad beatae doloribus possimus obcaecati impedit fugiat quisquam voluptatibus
-                magni</p>
-            <button>Hire Me</button>
-            <button>Download Cv</button>
+    <div class="d2" id="div">
+        <div class="about-container">
+            <div class="about-text">
+                <p>About Me</p>
+                <p>Developer & Engineer</p>
+                <p>Hello,My name is Phanindra Chowdary.As someone coming off of a fresh job search (yay, WordStream!), I
+                    can’t tell you how much About
+                    Us content
+                    browsed over the past few months. Or worse, couldn’t find at all! Lorem ipsum dolor, sit amet
+                    consectetur
+                    adipisicing elit. At velit accusamus, aut temporibus suscipit voluptatum, minus id similique
+                    repellendus
+                    itaque aspernatur ad beatae doloribus possimus obcaecati impedit fugiat quisquam voluptatibus
+                    magni</p>
+                <button>Hire Me</button>
+                <button>Download Cv</button>
+            </div>
         </div>
+
     </div>
+
     <!-- services -->
-    <div class="services">
+    <div class="services d3" id="div">
         <!-- services text -->
         <div class="services-text">
             <p>Services</p>
@@ -103,12 +127,12 @@
         </div>
     </div>
     <!-- contact me -->
-    <div class="contact-me">
+    <div class="contact-me d4" id="div">
         <p>If You Have Any Project In Your Mind.</p>
         <button>Contact Me</button>
     </div>
     <!-- footer -->
-    <footer>
+    <footer class="d5" id="div">
         <p>Going-To Internet</p>
         <p>
             if you want make a software for your bussiness Contact me.I make as
