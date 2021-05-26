@@ -1,8 +1,31 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: black;
 }
+#div{
+    width: 100%;
+    height: 100vh;
+}
+.d1{
+    background-color: #f0ab6a;
+}
+.d2{
+    background-color: rgb(224, 224, 224);
+
+}
+.d3{
+    width: 100vw;
+    background-color: #f0ab6a;
+
+}
+.d4{
+    background-color: rgb(224, 224, 224);
+
+}
+.d5{
+    background-color: #f0ab6a;
+
+} 
 ul{
     list-style: none;
 }
@@ -11,60 +34,144 @@ a{
 }
 section{
     width: 100%;
-    height: 95vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
 nav{
+    width: auto;
     display: flex;
     justify-content: space-between;
     text-align: left;
-    align-items: center;
     height: 60px;
-    background-color:black;
-    color: white;
-    box-shadow: 0px 0px 10px 10px green;
-    padding: 0 5%;
+    color:whitesmoke;
+    
+
 }
-nav ul{
-    display: flex;
+.nav-links ul li{
+    list-style: none;
+    display:inline-block;
 }
-nav ul li a{
+  .nav-links ul li a{
+    text-decoration: none;
+    font-size: 18px;
     margin: 30px;
     font-family: sans-serif;
-    color: white;
-    font-size: 15px;
+    color: black;
+    font-size: 18px;
     font-weight: 700;
-}
-.logo{
-    font-family: RoadTest;
-    color: white;
-    font-size: 22px;
-}
-.active{
-    font-weight: bold;
-    color:white ;
-}
+  }
+  .nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: whitesmoke;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .nav-links ul li:hover::after{
+    width: 50%;
+  }
+  .wrapper{
+    z-index: 9;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(-135deg,black,black);
+    clip-path: circle(25px at calc(45px - 100%) 45px);
+    transition: all 0.3s ease-in-out;
+  }
+  #active:checked ~ .wrapper{
+    clip-path: circle(75%);
+  }
+  .menu-btn{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    text-align: center;
+    line-height: 50px;
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(-135deg, #c850c8,#4158d8);
+    transition: all 0.3s eases;
+  }
+  #active:checked ~ .menu-btn{
+    background: #fff;
+    color: #4158d8;
+  }
+  #active:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  .wrapper ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    list-style: none;
+    text-align: center;
+  }
+  .wrapper ul li{
+    margin: 15px 0;
+  }
+  .wrapper ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 5px 50px;
+    position: relative;
+    line-height: 50px;
+    transition:all 0.3s ease ;
+  }
+  .wrapper ul li a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: whitesmoke;
+    border-radius: 50px;
+    transform: scaleZ(0);
+    z-index: -1;
+    transition:transform 0.3s ease ;
+  }
+  .wrapper ul li a:hover:after{
+    transform: scaleZ(1);
+  }
+  .wrapper ul li a:hover{
+    color: black;
+  }
+  input{
+    display: none;
+  }
 /*  text container*/
 .text-conatiner p:nth-child(1){
     font-family: sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
-    color: white;
+    color:whitesmoke;
     font-size: 22px;
 }
 .text-conatiner p:nth-child(2){
     font-family: sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
-    color: white;
+    color:whitesmoke;
     font-size: 60px;
 }
 .text-conatiner p:nth-child(3){
     font-family: sans-serif;
     line-height: 30px;
-    color: white;
+    color: whitesmoke;
     font-size: 30px;
 }
 .text-conatiner p{
@@ -72,87 +179,100 @@ nav ul li a{
     margin: 45px 0px 25px;
 }
 .text-conatiner{
+    padding: 50px;
+    width: 80%;
     position: absolute;
-    left: 13%;
-    top: 42%;
-    transform: translate(-13%,-42%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 .text-conatiner button{
     width: 130px;
     height: 42px;
-    border-radius:10px;
     font-family: sans-serif;
     font-weight: bold;
     font-size: 14px;
     outline: none;
-    margin: 0px 10px;
+    margin: 40px 5px;
 }
 .hire-btn,.down-cv{
-    border-radius: 2px solid #373636;
-    color: #373636;    
+    border-radius: 2px solid #373636; 
 }
 button:active{
     transform: scale(1.1);
 }
 /* about container */
 .about-container{
-    width: 80%;
-    height: 330px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 10px 10px green;
+    width: 100%;
+    height: 100%;
     display: flex;
-    margin: -7% auto 20px auto;
+    /* margin: -7% auto 20px auto; */
     position: relative;
     justify-content: space-evenly;
     align-items: center;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .about-text{
-    color: white;
-    width: 550px;
+    color: black;
+    width: 80vw;
+    height: 60%;
 }
 .about-text p:nth-child(1){
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 23px;
-    line-height: 0px;
+    font-size: 40px;
+    line-height: 15px;
+    text-align: center;
 }
 .about-text p:nth-child(2){
+
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 13px;
-    line-height: 5px;
+    font-size: 25px;
+    line-height: 10px;
+    text-align: center;
 }
 .about-text p:nth-child(3){
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 25px;
 }
 .about-text button{
+    align-items: center;
     width: 120px;
-    height: 40px;
+    height: 60px;
     outline: none;
     font-family: sans-serif;
+    font-weight: bold;
 }
 /* Serviices */
-.services{   
+.services{  
+    width: 100vw;
     height: 600px;
-    color: white;
+    color: whitesmoke;
     padding: 2% 10% 0px 10%;
 }
 .services-text p:nth-child(1){
+    text-align: center;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 0px;
+    font-size: 40px;
+    line-height: 15px;
 }
 .services-text p:nth-child(2){
+    text-align: center;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 15px;
-    line-height: 5px;
+    font-size: 25px;
+    line-height: 10px;
+}
+.services-text p:nth-child(3){
+    font-family: sans-serif;
+    font-size: 25px;
+
 }
 .services-text{
-    width: 500px;
     margin: 50px 0px;
 }
 .box-1,.box-2,.box-3{
@@ -161,11 +281,12 @@ button:active{
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    box-shadow: 0 0 10px 10px blue;
+    box-shadow: 0 0 10px 10px #d8b08a;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: whitesmoke;
 }
 
 .box-container{
@@ -178,18 +299,18 @@ button:active{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: white;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
     font-weight: bold;
-    color: black;
+    color: whitesmoke;
 }
 .box-1 p:nth-child(2),
 .box-2 p:nth-child(2),
 .box-3 p:nth-child(2){
-    color: white;
+    color: black;
     font-family:sans-serif;
     font-size: 23px;
     line-height: 0px;
@@ -198,6 +319,7 @@ button:active{
 .box-1 p:nth-child(3),
 .box-2 p:nth-child(3),
 .box-3 p:nth-child(3){
+    color: black;
     font-family:sans-serif;
     text-align: center;
     width: 230px;
@@ -206,6 +328,8 @@ button:active{
 .box-1 button,
 .box-2 button,
 .box-3 button{
+    background-color: black;
+    color: whitesmoke;
     width: 100px;
     height: 30px;
     border: none;
@@ -214,7 +338,7 @@ button:active{
 }
 /* contact me */
 .contact-me{
-    color: white;
+    color: black;
     width: 100%;
     height: 280%;
     display: flex;
@@ -223,11 +347,11 @@ button:active{
     align-items: center;
 }
 .contact-me p{
-    color: white;
+    color: black;
     font-size: 30px;
     font-family: sans-serif;
     font-weight:bold;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid black;
 }
 .contact-me button{
     width: 200px;
@@ -236,6 +360,8 @@ button:active{
     border: none;
     font-size: 14px;
     font-weight: bold;
+    background-color: #000000;
+    color: whitesmoke;
 }
 /* footer */
 footer{
@@ -251,11 +377,11 @@ footer p{
 footer p:nth-child(1){
     font-weight: bold;
     line-height: 10px;
-    color: white;
+    color: whitesmoke;
 }
 footer p:nth-child(2){
     font-size: 16px;
-    color: white;
+    color: whitesmoke;
     width: 600px;
     text-align: center;
 }
@@ -278,12 +404,12 @@ footer p:nth-child(2){
 }
 .social-icons a:hover,
 .a-social-b a:hover{
-    box-shadow: 0px 0px 5px 5px yellow;
+    box-shadow: 0px 0px 5px 5px blue;
     transition: all ease 0.5s;
 }
 .social-icons a:hover i,
 .a-social-b  a:hover i{
-    color: white;
+    color: whitesmoke;
     transition: all ease 0.5s;
 }
 
